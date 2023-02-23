@@ -1,7 +1,7 @@
 import React from 'react';
  import { Formik } from 'formik';
  
- const Home = () => (
+ const BookCtagory = () => (
    <div>
      <h1>Anywhere in your app!</h1>
      <Formik
@@ -59,5 +59,3 @@ import React from 'react';
      </Formik>
    </div>
  );
- 
- export default Home;
