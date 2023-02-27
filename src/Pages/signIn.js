@@ -38,7 +38,7 @@ function Signin() {
     };
 
     return (
-        <div className="flex w-screen h-screen bg-gray-900">
+        <div className="flex w-screen h-screen bg-gray-100">
             <div className="w-4/12"></div>
             <div className="w-4/12 mt-[6%]">
                 <div className='bg-gray-800 flex flex-col justify-center px-[10%] py-[20%]'>
@@ -66,7 +66,7 @@ function Signin() {
                         </button>
                     </form>
                     <p className="mt-2 text-teal-300">New User?</p>
-                    <Link to="/"><p className="text-teal-300 underline">SignUp</p></Link>
+                    <Link to="/signup"><p className="text-teal-300 underline">SignUp</p></Link>
                 </div>
             </div>
             <div className="w-4/12 h-full"></div>

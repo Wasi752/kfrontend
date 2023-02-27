@@ -12,7 +12,7 @@ const signUpValidationSchema = Yup.object().shape({
         .matches(/(\w.+\s).+/, 'Enter at least 2 names')
         .required('Full name is required'),
     phoneNumber: Yup.string()
-        .matches(/(01)(\d){8}\b/, 'Enter a valid phone number')
+        .matches(/(01)(\d){9}\b/, 'Enter a valid phone number')
         .required('Phone number is required'),
     email: Yup.string()
         .email("Please enter valid email")
@@ -28,7 +28,7 @@ const signUpValidationSchema = Yup.object().shape({
         .oneOf([Yup.ref('password')], 'Passwords do not match')
         .required('Confirm password is required'),
 });
-const Form = ({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) =>
+const form = ({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) =>
 
 (
     <div className="w-full h-full flex mt-20 mb-56">
@@ -148,7 +148,7 @@ const SignUp = () => {
             <Formik
                 initialValues={iValue}
                 validationSchema={signUpValidationSchema}
-                component={Form}
+                component={form}
                 onSubmit={onSubmit}
             >
             </Formik>
