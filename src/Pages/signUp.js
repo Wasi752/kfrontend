@@ -3,9 +3,9 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 
-const inputClass = "h-[10%] w-[50%] p-4 border border-blue-300 rounded-md m-1";
-const divClassRight = "flex flex-col w-full h-full ml-40";
-const divClassLeft = "flex flex-col w-full h-full ml-72";
+const inputClass = "h-[10%] w-[60%] p-4 border border-blue-300 rounded-md m-1";
+const divClassRight = "flex flex-col w-full h-full ml-36 pl-1 ";
+const divClassLeft = "flex flex-col w-full h-full ml-36";
 
 const signUpValidationSchema = Yup.object().shape({
     fullName: Yup.string()
@@ -32,10 +32,10 @@ const form = ({ values, errors, touched, handleChange, handleBlur, handleSubmit,
 
 (
     <div className="w-full h-full flex mt-20 mb-56">
-        <div className="w-[20%] h-full"></div>
+        <div className="w-[30%] h-full"></div>
 
-        <div className="w-[60%] h-full bg-gray-100 ">
-            <p className="mt-5 mb-5 text-3xl text-red-700 font-bold font-serif text-center">Sign Up</p>
+        <div className="w-[40%] h-full bg-gray-900 mt-36">
+            <p className="mt-5 mb-5 text-3xl text-white font-bold font-serif text-center">Sign Up</p>
             <div className="flex w-full h-full justify-center divide-x-2 divide-slate-500">
                 <div className="mt-1 flex flex-col w-full h-full">
                     <form onSubmit={handleSubmit}>
@@ -114,7 +114,7 @@ const form = ({ values, errors, touched, handleChange, handleBlur, handleSubmit,
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="text-center text-2xl text-white font-bold h-[10%] w-[50%] p-4 border border-blue-300 rounded-md ml-32 mb-5 mr-3 mt-12 bg-blue-600 hover:text-blue-300">
+                                className="text-center text-2xl text-white font-bold h-[10%] w-[60%] p-4 border border-blue-300 rounded-md mb-5 mt-5 bg-blue-600 hover:text-blue-300">
                                 Submit
                             </button>
                         </div>
@@ -131,7 +131,7 @@ const iValue = { fullName: '', phoneNumber: '', email: '', password: '', confirm
 const SignUp = () => {
     const navigate = useNavigate();
     const onSubmit = (values, { setSubmitting }) => {
-        fetch('http://localhost:3001/signup', {
+        fetch('http://localhost:3001/user', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json',
@@ -139,7 +139,7 @@ const SignUp = () => {
             body: JSON.stringify(values),
         })
             .then((response) => {
-                navigate('/signin');
+                navigate('/');
             });
 
     }
