@@ -1,10 +1,9 @@
-import HeaderANavbar from "./HeaderANavbar";
 import { Link } from "react-router-dom";
 
 function BookCategory() {
   return (
     <div className="w-full h-full">
-      <HeaderANavbar />
+      
       <div className="flex w-full h-full mt-10">
         <div className="w-[20%] h-full bg-green-100 mt-10">
           <Link to={"/sdetails/1"}><p className="text-2xl font-serif font-extrabold ml-10 mb-5 mt-40 text-blue-500">Staff Details</p></Link>
