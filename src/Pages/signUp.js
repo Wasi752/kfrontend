@@ -31,10 +31,10 @@ const signUpValidationSchema = Yup.object().shape({
 const form = ({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) =>
 
 (
-    <div className="w-full h-full flex mt-20 mb-56">
+    <div className="w-full h-full flex bg-blue-100">
         <div className="w-[30%] h-full"></div>
 
-        <div className="w-[40%] h-full bg-gray-900 mt-36">
+        <div className="w-[40%] h-full mt-40 mb-96 bg-blue-300 ">
             <p className="mt-5 mb-5 text-3xl text-white font-bold font-serif text-center">Sign Up</p>
             <div className="flex w-full h-full justify-center divide-x-2 divide-slate-500">
                 <div className="mt-1 flex flex-col w-full h-full">
@@ -114,7 +114,7 @@ const form = ({ values, errors, touched, handleChange, handleBlur, handleSubmit,
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="text-center text-2xl text-white font-bold h-[10%] w-[60%] p-4 border border-blue-300 rounded-md mb-5 mt-5 bg-blue-600 hover:text-blue-300">
+                                className="text-center text-2xl text-white font-bold h-[10%] w-[60%] p-4 border border-blue-300 rounded-md mb-10 mt-5 bg-blue-600 hover:text-blue-300">
                                 Submit
                             </button>
                         </div>
@@ -132,7 +132,7 @@ const SignUp = () => {
     const navigate = useNavigate();
     const onSubmit = (values, { setSubmitting }) => {
         fetch('http://localhost:3001/user', {
-            method: 'POST', 
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },

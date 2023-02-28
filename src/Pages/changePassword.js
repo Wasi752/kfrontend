@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const inputClass = "h-[10%] w-[60%] p-4 border border-blue-300 rounded-md m-1";
@@ -60,6 +60,7 @@ const form = ({ values, errors, touched, handleChange, handleBlur, handleSubmit,
                             </span>
                         </div>
                         <div className={divClassRight}>
+                            
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
@@ -82,7 +83,7 @@ const ChangePassword = () => {
     const navigate = useNavigate();
 
     const onSubmit = (values, { setSubmitting }) => {
-        fetch('http://localhost:3001/user' + id, {
+        fetch('http://localhost:3001/user/' + id, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

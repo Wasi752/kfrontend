@@ -2,7 +2,7 @@ import { useState } from "react";
 import {  useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-function GetPassword() {
+function RecoverPassword() {
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const navigate = useNavigate();
@@ -14,7 +14,7 @@ function GetPassword() {
             phoneNumber: phoneNumber
         };
 
-        fetch('http://localhost:3001/signin', {
+        fetch('http://localhost:3001/recover', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ function GetPassword() {
             })
             .then((body) => {
                 if (body) {
-                    navigate('/signin' + id)
+                    navigate('/change')
                     //window.alert(`Signed in as ${body.fullName}`)
                 }
                 else {
@@ -52,13 +52,13 @@ function GetPassword() {
                             placeholder="E-mail or Phone Number"
                             className='m-3 px-4 py-3 rounded-lg bg-gray-700 focus:border-blue-500 focus:bg-gray-800 focus:outline-none'
                         />
-                        <Link to = {'/signin' + id}>
+                        
                         <button
                             type="button"
                             onClick={submit}
                             className='m-3 px-4 py-3 bg-teal-500 shadow-lg text-center shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg text-2xl  hover:bg-teal-400'
                         >Submit
-                        </button></Link>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -66,4 +66,4 @@ function GetPassword() {
         </div>
     );
 }
-export default GetPassword;
+export default RecoverPassword;
