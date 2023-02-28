@@ -1,15 +1,17 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function Signin() {
+function GetPassword() {
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
     const navigate = useNavigate();
+    const {id} = useParams();
 
-    const signin = () => {
+    const submit = () => {
         const user = {
             email: email,
-            password: password
+            phoneNumber: phoneNumber
         };
 
         fetch('http://localhost:3001/signin', {
@@ -26,13 +28,12 @@ function Signin() {
             })
             .then((body) => {
                 if (body) {
-                    navigate("/home")
+                    navigate('/signin' + id)
                     //window.alert(`Signed in as ${body.fullName}`)
                 }
                 else {
-                    window.alert(`No user exists with ${email} or ${password} `);
-                    setEmail("");
-                    setPassword("");
+                    window.alert(`No user exists with ${email} or ${phoneNumber} `);
+                    setEmail("") || setPhoneNumber("");
                 }
             });
     };
@@ -43,36 +44,26 @@ function Signin() {
             <div className="w-4/12 mt-[6%]">
                 <div className='bg-gray-800 flex flex-col justify-center px-[10%] py-[20%]'>
                     <form className='flex flex-col w-full text-white'>
-                        <h2 className='text-4xl text-teal-500 font-bold text-center py-7'>SIGNIN</h2>
+                        <h2 className='text-2xl text-teal-500 font-bold text-center py-7'>Recover Your Password</h2>
                         <input
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
+                            value={email || phoneNumber}
+                            onChange={e => setEmail(e.target.value) || setPhoneNumber(e.target.value)}
                             type="text"
-                            placeholder="E-mail"
+                            placeholder="E-mail or Phone Number"
                             className='m-3 px-4 py-3 rounded-lg bg-gray-700 focus:border-blue-500 focus:bg-gray-800 focus:outline-none'
                         />
-                        <input
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                            type="password"
-                            placeholder="Password"
-                            className='m-3 px-4 py-3 rounded-lg bg-gray-700 focus:border-blue-500 focus:bg-gray-800 focus:outline-none'
-                        />
+                        <Link to = {'/signin' + id}>
                         <button
                             type="button"
-                            onClick={signin}
+                            onClick={submit}
                             className='m-3 px-4 py-3 bg-teal-500 shadow-lg text-center shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg text-2xl  hover:bg-teal-400'
-                        >SIGNIN
-                        </button>
+                        >Submit
+                        </button></Link>
                     </form>
-                    <div className="flex">
-                        <Link to="/forget"><p className="mt-2 ml-3 text-teal-300">Forgot Your Password?</p></Link>
-                        <p className="mt-2 ml-44 text-teal-300">New User? <Link to="/signup">SignUp</Link></p>
-                    </div>
                 </div>
             </div>
             <div className="w-4/12 h-full"></div>
         </div>
     );
 }
-export default Signin;
+export default GetPassword;
