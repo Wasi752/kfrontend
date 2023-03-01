@@ -23,13 +23,13 @@ function RecoverPassword() {
         })
             .then(response => {
                 if (response.status === 200) {
-                    return response.json()
+                    return response.json() 
                 }
             })
             .then((body) => {
                 if (body) {
-                    navigate('/change')
-                    //window.alert(`Signed in as ${body.fullName}`)
+                    navigate('/change/' + body.id)
+                    //window.alert(`Signed in as ${body.id}`)
                 }
                 else {
                     window.alert(`No user exists with ${email} or ${phoneNumber} `);

@@ -33,6 +33,49 @@ const form = ({ values, errors, touched, handleChange, handleBlur, handleSubmit,
                     <form onSubmit={handleSubmit}>
                         <div className={divClassLeft}>
                             <input
+                                type='name'
+                                name='fullName'
+                                placeholder='Enter Your Full Name'
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.fullName}
+                                className={inputClass}
+                            />
+                            <span className='text-red-500'>
+                                {touched.fullName && errors.fullName}
+                            </span>
+
+                        </div>
+                        <div className={divClassLeft}>
+                            <input
+                                type="text"
+                                name='phoneNumber'
+                                placeholder='Phone Number'
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.phoneNumber}
+                                className={inputClass}
+                            />
+                            <span className='text-red-500'>
+                                {touched.phoneNumber && errors.phoneNumber}
+                            </span>
+                        </div>
+                        <div className={divClassLeft}>
+                            <input
+                                type="text"
+                                name='email'
+                                placeholder='Your Valid Email'
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.email}
+                                className={inputClass}
+                            />
+                            <span className='text-red-500'>
+                                {touched.email && errors.email}
+                            </span>
+                        </div>
+                        <div className={divClassLeft}>
+                            <input
                                 type="password"
                                 name="password"
                                 placeholder='Password'
@@ -60,7 +103,7 @@ const form = ({ values, errors, touched, handleChange, handleBlur, handleSubmit,
                             </span>
                         </div>
                         <div className={divClassRight}>
-                            
+
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
