@@ -1,12 +1,11 @@
 import { useState } from "react";
-import {  useNavigate, useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 function RecoverPassword() {
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const navigate = useNavigate();
-    const {id} = useParams();
+    
 
     const submit = () => {
         const user = {

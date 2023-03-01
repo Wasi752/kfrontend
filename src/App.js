@@ -1,10 +1,10 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
-import BookCategory from './Pages/stockCategory';
 import SignUp from './Pages/signUp';
 import Signin from './Pages/signIn';
 import ChangePassword from './Pages/changePassword';
 import RecoverPassword from './Pages/recoverPassword';
+import BookCategory from './Pages/stockCategory';
 
 function App() {
   return (

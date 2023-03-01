@@ -9,8 +9,8 @@ function BookCategory() {
     fetch('http://localhost:3001/user/' + id)
       .than((Response) => Response.json())
       .than((data) => {
-        const visitorName = data.filter((x) => x.id === id)
-        setName(visitorName)
+        const userName = data.filter((x) => x.id === id)
+        setName(userName.fullName)
       });
   }, [id]);
   return (
