@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 function BookCategory() {
-  const [name, setName] = useState("");
+  const [name, setName] = useState(true);
   const { id } = useParams();
   useEffect(() => {
     fetch('http://localhost:3001/user/' + id)
