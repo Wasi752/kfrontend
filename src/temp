@@ -3,14 +3,14 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 function BookCategory() {
-  const [name, setName] = useState("");
+  const [name, setName] = useState();
   const { id } = useParams();
   useEffect(() => {
     fetch('http://localhost:3001/user/' + id)
       .than((Response) => Response.json())
       .than((data) => {
-        const visitorName = data.filter((x) => x.id === id)[0];
-        setName(visitorName.fullName)
+        const visitorName = data.filter((x) => x.id === id)
+        setName(visitorName)
       });
   }, [id]);
   return (
@@ -28,5 +28,3 @@ function BookCategory() {
     </div>
   )
 }
-
-export default BookCategory;

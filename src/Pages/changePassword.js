@@ -1,7 +1,7 @@
 import React from 'react';
-import { Formik, Form, Field } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 const inputClass = "h-[10%] w-[60%] p-4 border border-blue-300 rounded-md m-1";

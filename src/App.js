@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import BookCategory from './Pages/stockCategory';
 import SignUp from './Pages/signUp';
 import Signin from './Pages/signIn';
@@ -15,7 +14,7 @@ function App() {
         <Route path="/signup" element={<SignUp/>} />
         <Route path="forget" element={<RecoverPassword/>} />
         <Route path="/change/:id" element={<ChangePassword/>} />
-        <Route path="/home" element={<BookCategory/>} />
+        <Route path="/home/:id" element={<BookCategory/>} />
       </Routes>
     </div>
   );
