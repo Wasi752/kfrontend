@@ -1,16 +1,17 @@
 import FooterAFNavbar from "../Component/Footer";
 import { Link } from "react-router-dom";
+import { navbar } from "../Component/HeaderANavbar";
 
 function Home() {
     return (
         <div className="w-full h-full">
             <div className="w-full h-full flex flex-col">
                 <div className="w-full h-[10%] flex">
+                    <div className="w-[33%] m-5">{navbar}</div>
                     <div className="w-[33%]"></div>
-                    <div className="w-[33%]"></div>
-                    <div className="w-[33%] bg-yellow-300 text-right">
-                        <Link to='/signup2'><span className="p-2 text-lg">signup</span></Link>
-                        <Link to='/login'><span className="p-2 text-lg">login</span></Link>
+                    <div className="w-[33%] text-right m-5">
+                        <Link to='/signup2'><span className="p-2 text-lg hover:text-green-800 ">signup</span></Link>
+                        <Link to='/login'><span className="p-2 text-lg hover:text-green-800">login</span></Link>
                     </div>
                 </div>
                 <div className="w-full h-3/6 bg-green-200 flex flex-col justify-center pl-40 bg-blue-200 ">
