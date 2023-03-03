@@ -10,8 +10,8 @@ function Home() {
                     <div className="w-[33%] m-5">{navbar}</div>
                     <div className="w-[33%]"></div>
                     <div className="w-[33%] text-right m-5">
-                        <Link to='/signup2'><span className="p-2 text-lg hover:text-green-800 ">signup</span></Link>
-                        <Link to='/login'><span className="p-2 text-lg hover:text-green-800">login</span></Link>
+                        <Link to='/signup'><span className="p-2 text-lg hover:text-green-800 ">Signup</span></Link>
+                        <Link to='/signin'><span className="p-2 text-lg hover:text-green-800">Login</span></Link>
                     </div>
                 </div>
                 <div className="w-full h-3/6 bg-green-200 flex flex-col justify-center pl-40 bg-blue-200 ">

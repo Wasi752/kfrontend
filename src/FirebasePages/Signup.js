@@ -54,7 +54,7 @@ const form = ({ values, errors, touched, handleChange, handleBlur, handleSubmit,
                             </span>
 
                         </div>
-                        <div className={divClassLeft}>
+                        {/* <div className={divClassLeft}>
                             <input
                                 type="text"
                                 name='phoneNumber'
@@ -67,7 +67,7 @@ const form = ({ values, errors, touched, handleChange, handleBlur, handleSubmit,
                             <span className='text-red-500'>
                                 {touched.phoneNumber && errors.phoneNumber}
                             </span>
-                        </div>
+                        </div> */}
                         <div className={divClassLeft}>
                             <input
                                 type="text"
