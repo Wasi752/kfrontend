@@ -2,6 +2,8 @@ import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
+import { getAuth } from "firebase/auth";
+
 
 const inputClass = "h-[10%] w-[60%] p-4 border border-blue-300 rounded-md m-1";
 const divClassRight = "flex flex-col w-full h-full ml-36 pl-1 ";
@@ -130,6 +132,7 @@ const iValue = { fullName: '', phoneNumber: '', email: '', password: '', confirm
 
 const SignUp2 = () => {
     const navigate = useNavigate();
+  //  const auth = getAuth(app);
     const onSubmit = (values, { setSubmitting }) => {
         fetch('http://localhost:3001/user', {
             method: 'POST',
