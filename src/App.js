@@ -7,7 +7,7 @@ import SignUp from './Pages/signUp';
 import Signin from './Pages/signIn';
 import ChangePassword from './Pages/changePassword';
 import RecoverPassword from './Pages/recoverPassword';
-import BookCategory from './Pages/Dashboard';
+import UserDesh from './Pages/Dashboard';
 
 
 function App() {
@@ -19,10 +19,12 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="forget" element={<RecoverPassword />} />
         <Route path="/change/:id" element={<ChangePassword />} />
-        <Route path="/:id" element={<BookCategory />} />
+        <Route path="/admin/:id" element={<UserDesh />} />
         <Route path="/" element={<Home />} />
         <Route path="/signup2" element={<SignUp2 />} />
-        <Route path="/signin" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/:id" element={<Home />} />
+
       </Routes>
     </div>
   );

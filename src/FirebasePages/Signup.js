@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
-import { getAuth } from "firebase/auth";
+//import { getAuth } from "firebase/auth";
 
 
 const inputClass = "h-[10%] w-[60%] p-4 border border-blue-300 rounded-md m-1";

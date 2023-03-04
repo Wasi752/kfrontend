@@ -26,7 +26,7 @@ function Signin() {
             })
             .then((body) => {
                 if (body) {
-                    navigate("/") //+ body.id
+                    navigate("/" + body.fullName) //+ body.id
                     //window.alert(`Signed in as ${body.fullName}`)
                 }
                 else {

@@ -1,8 +1,9 @@
 import FooterAFNavbar from "../Component/Footer";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { navbar } from "../Component/HeaderANavbar";
 
 function Home() {
+    const {id} = useParams();
     return (
         <div className="w-full h-full">
             <div className="w-full h-full flex flex-col">
@@ -10,6 +11,7 @@ function Home() {
                     <div className="w-[33%] m-5">{navbar}</div>
                     <div className="w-[33%]"></div>
                     <div className="w-[33%] text-right m-5">
+                        <span className="p-2 text-lg hover:text-green-800 ">{id}</span>
                         <Link to='/signup'><span className="p-2 text-lg hover:text-green-800 ">Signup</span></Link>
                         <Link to='/signin'><span className="p-2 text-lg hover:text-green-800">Login</span></Link>
                     </div>

@@ -26,7 +26,7 @@ function Login() {
             })
             .then((body) => {
                 if (body) {
-                    navigate("/home" ) //+ body.id
+                    navigate("/admin/" + body.fullName) //+ body.id
                     //window.alert(`Signed in as ${body.fullName}`)
                 }
                 else {
@@ -41,7 +41,7 @@ function Login() {
         <div className="flex w-screen h-screen bg-gray-100">
             <div className="w-4/12"></div>
             <div className="w-4/12 mt-[6%]">
-                <div className='bg-gray-800 flex flex-col justify-center px-[10%] py-[20%]'>
+                <div className='bg-gray-200 flex flex-col justify-center px-[10%] py-[20%]'>
                     <form className='flex flex-col w-full text-white'>
                         <h2 className='text-4xl text-teal-500 font-bold text-center py-7'>SIGNIN</h2>
                         <input
@@ -66,8 +66,8 @@ function Login() {
                         </button>
                     </form>
                     <div className="flex">
-                        <Link to="/forget"><p className="mt-2 ml-3 text-teal-300">Forgot Your Password?</p></Link>
-                        <p className="mt-2 ml-44 text-teal-300">New User? <Link to="/signup">SignUp</Link></p>
+                        <Link to="/forget"><p className="mt-2 ml-3 text-teal-700">Forgot Your Password?</p></Link>
+                        <p className="mt-2 ml-44 text-teal-700">New User? <Link to="/signup">SignUp</Link></p>
                     </div>
                 </div>
             </div>
