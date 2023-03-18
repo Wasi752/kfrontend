@@ -13,7 +13,7 @@ function Home() {
                     <div className="w-[33%] text-right m-5">
                         <span className="p-2 text-lg hover:text-green-800 ">{id}</span>
                         <Link to='/signup'><span className="p-2 text-lg hover:text-green-800 ">Signup</span></Link>
-                        <Link to='/signin'><span className="p-2 text-lg hover:text-green-800">Login</span></Link>
+                        <Link to='/login'><span className="p-2 text-lg hover:text-green-800">Login</span></Link>
                     </div>
                 </div>
                 <div className="w-full h-3/6 bg-green-200 flex flex-col justify-center pl-40 bg-blue-200 ">
