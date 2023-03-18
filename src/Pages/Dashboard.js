@@ -1,35 +1,7 @@
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { LeftMenu } from "../Component/DeshboadrLeftSide";
 
-function DeshboardLeftSide({ itemname, link }) {
-  return (
-    <Link to={link}> <ul className=" text-left ml-10 mb-5 hover:text-blue-600 ">{itemname}</ul></Link>
-  )
-}
-const humanResourceLink = [
-  { iname: "Committee", link: "/committee" },
-  { iname: "Boards", link: "/board" },
-  { iname: "Madrasa", link: "/reg/madrasa/madrasalist" },
-  { iname: "Negran", link: "/negran" },
-  { iname: "Mumtahin", link: "/mumtahin" },
-  { iname: "Staff", link: "/summary" },
-  { iname: "Recruitment", link: "/recruit" },
-  { iname: "Payroll", link: "/payscale" },
-  { iname: "Leave Info", link: "/leave" },
-  { iname: "Registration", link: "/reg" },
-  { iname: "Form fill Up", link: "/fillup" },
-  { iname: "Center Manegment", link: "/center" },
-  { iname: "Examination", link: "/exam" },
-  { iname: "Result Prepare", link: "/" },
-  { iname: "Result Publish", link: "/result" },
-  { iname: "Certificate Issue", link: "/certificate" },
-  { iname: "Scholarship", link: "/scholarship" },
-  { iname: "Alumni Info", link: "/alumni" }
-];
-const LeftMenu = humanResourceLink.map(x => <DeshboardLeftSide link={x.link} itemname={x.iname} />);
-
-function UserDesh() {
+function AdminDeshBoard() {
   const { id } = useParams();
   return (
     <div className="w-full h-full">
@@ -57,4 +29,4 @@ function UserDesh() {
   );
 }
 
-export default UserDesh;
+export default AdminDeshBoard;
