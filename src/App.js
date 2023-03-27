@@ -8,7 +8,6 @@ import ChangePassword from './Pages/changePassword';
 import RecoverPassword from './Pages/recoverPassword';
 import AdminDeshBoard from './Pages/Dashboard';
 import DropdownMenu from "./Component/Dropdown";
-import GetCurrentDate from "./Component/GetDate";
 
 
 function App() {
