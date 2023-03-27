@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { LeftMenu } from "../Component/DeshboadrLeftSide";
+import GetCurrentDate from "../Component/GetDate";
 
 function AdminDeshBoard() {
   const { id } = useParams();
@@ -19,6 +20,8 @@ function AdminDeshBoard() {
       </div>
       <div className="flex w-full h-full mt-10">
         <div className="w-[12%] h-full bg-green-100 mt-1">
+        <p className="text-lg text-red-700 font-bold ml-10 text-left mb-5"><GetCurrentDate/></p>
+
           <p className="text-lg text-green-700 font-bold ml-10 text-left mb-5">Deshboard</p>
           {LeftMenu}
         </div>
