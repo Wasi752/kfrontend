@@ -134,7 +134,7 @@ const SignUp2 = () => {
     const navigate = useNavigate();
   //  const auth = getAuth(app);
     const onSubmit = (values, { setSubmitting }) => {
-        fetch('http://localhost:3001/user', {
+        fetch('http://localhost:3002/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

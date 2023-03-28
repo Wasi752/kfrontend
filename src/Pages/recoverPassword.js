@@ -13,7 +13,7 @@ function RecoverPassword() {
             phoneNumber: phoneNumber
         };
 
-        fetch('http://localhost:3001/recover', {
+        fetch('http://localhost:3002/recover', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json',

@@ -131,7 +131,7 @@ const iValue = { fullName: '', phoneNumber: '', email: '', password: '', confirm
 const SignUp = () => {
     const navigate = useNavigate();
     const onSubmit = (values, { setSubmitting }) => {
-        fetch('http://localhost:3001/user', {
+        fetch('http://localhost:3002/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

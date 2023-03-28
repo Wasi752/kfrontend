@@ -126,7 +126,7 @@ const ChangePassword = () => {
     const navigate = useNavigate();
 
     const onSubmit = (values, { setSubmitting }) => {
-        fetch('http://localhost:3001/user/' + id, {
+        fetch('http://localhost:3002/user/' + id, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
