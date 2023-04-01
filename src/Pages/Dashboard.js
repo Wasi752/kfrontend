@@ -1,9 +1,33 @@
 import { useParams } from "react-router-dom";
 import { LeftMenu } from "../Component/DeshboadrLeftSide";
 import GetCurrentDate from "../Component/GetDate";
+import { useNavigate } from "react-router-dom";
+import useAuthentication from "../util";
+
+const submit = () => {
+  console.log('Roza');
+  fetch('http://localhost:3000/secret-6', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': localStorage.getItem('code'),
+      'IV': localStorage.getItem('iv')
+    },
+  })
+    .then(r => r.text())
+    .then((response) => {
+      console.log(response);
+    });
+}
 
 function AdminDeshBoard() {
+  const navigate = useNavigate();
   const { id } = useParams();
+  useAuthentication();
+  const logOut = () => {
+    localStorage.clear()
+    navigate('/')
+  }
   return (
     <div className="w-full h-full">
       <div className="w-full h-[10%] flex ">
@@ -20,7 +44,17 @@ function AdminDeshBoard() {
       </div>
       <div className="flex w-full h-full mt-10">
         <div className="w-[12%] h-full bg-green-100 mt-1">
-        <p className="text-lg text-red-700 font-bold ml-10 text-left mb-5"><GetCurrentDate/></p>
+          <button
+            type="button"
+            className="border border-rounded"
+            onClick={submit}
+          >Click Me!</button>
+          <button
+            type="button"
+            className="border border-rounded"
+            onClick={logOut}
+          >Logout</button>
+          <p className="text-lg text-red-700 font-bold ml-10 text-left mb-5"><GetCurrentDate /></p>
 
           <p className="text-lg text-green-700 font-bold ml-10 text-left mb-5">Deshboard</p>
           {LeftMenu}
