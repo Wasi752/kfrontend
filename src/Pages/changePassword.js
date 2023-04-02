@@ -126,30 +126,16 @@ const ChangePassword = () => {
     const navigate = useNavigate();
 
     const onSubmit = (values, { setSubmitting }) => {
-        // fetch('http://localhost:3002/user/' + id, {
-        //     method: 'PUT',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(values),
-        // })
-        //     .then((response) => {
-        //         navigate('/');
-        //     });
-        console.log('starting');
-        fetch('http://localhost:3000/secret-6', {
-            method: 'GET',
+        fetch('http://localhost:3002/user/' + id, {
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization' : 'ad48be58e93b7f7cb968ad4731196524',
-                'IV': '19763b56936872c88cabd57d6bfb9a7d'
             },
+            body: JSON.stringify(values),
         })
-        .then(r => r.text())
             .then((response) => {
-                console.log(response);
+                navigate('/');
             });
-
     }
     return (
         <div>

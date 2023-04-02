@@ -2,13 +2,24 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
     const signin = () => {
-        console.log('Text')
+        const user = {
+            email: email,
+            password: password
+        };
 
-        fetch('http://localhost:3000/login?password=' + password)
+        fetch('http://localhost:3002/signin', //login?password= + password)
+        {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        })
             .then(response => {
                 if (response.status === 200) {
                     return response.json()
@@ -16,13 +27,14 @@ function Login() {
             })
             .then((body) => {
                 if (body) {
-                    localStorage.setItem('code', body.code)
-                    localStorage.setItem('iv', body.iv)
+                    localStorage.setItem('code', body.email)
+                    localStorage.setItem('iv', body.password)
                     navigate("/admin/" + body.fullName) //+ body.id
                     //window.alert(`Signed in as ${body.fullName}`)
                 }
                 else {
-                    window.alert(`No user exists with ${password} `);
+                    window.alert(`No user exists with ${email} or ${password} `);
+                    setEmail("");
                     setPassword("");
                 }
             });
@@ -34,8 +46,14 @@ function Login() {
             <div className="w-4/12 mt-[6%]">
                 <div className='bg-gray-200 flex flex-col justify-center px-[10%] py-[20%]'>
                     <form className='flex flex-col w-full text-white'>
-                        <h2 className='text-4xl text-teal-500 font-bold text-center py-7'>SIGNIN</h2>
-                        
+                        <h2 className='text-4xl text-teal-500 font-bold text-center py-7'>LOGIN</h2>
+                        <input
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                            type="text"
+                            placeholder="E-mail"
+                            className='m-3 px-4 py-3 rounded-lg bg-gray-700 focus:border-blue-500 focus:bg-gray-800 focus:outline-none'
+                        />
                         <input
                             value={password}
                             onChange={e => setPassword(e.target.value)}
@@ -47,7 +65,7 @@ function Login() {
                             type="button"
                             onClick={signin}
                             className='m-3 px-4 py-3 bg-teal-500 shadow-lg text-center shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg text-2xl  hover:bg-teal-400'
-                        >SIGNIN
+                        >LOGIN
                         </button>
                     </form>
                     <div className="flex">

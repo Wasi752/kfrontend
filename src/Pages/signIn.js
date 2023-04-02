@@ -26,7 +26,9 @@ function Signin() {
             })
             .then((body) => {
                 if (body) {
-                    navigate("/" + body.fullName) //+ body.id
+                    localStorage.setItem('code', body.email)
+                    localStorage.setItem('iv', body.password)
+                    navigate("/admin/" + body.fullName) //+ body.id
                     //window.alert(`Signed in as ${body.fullName}`)
                 }
                 else {

@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from './Pages/Home';
-import SignUp2 from './FirebasePages/Signup';
+import SignUp2 from './FirebasePages/Signup2';
 import Login from './FirebasePages/Login';
 import SignUp from './Pages/signUp';
 import Signin from './Pages/signIn';
@@ -20,10 +20,9 @@ function App() {
         <Route path="forget" element={<RecoverPassword />} />
         <Route path="/change/:id" element={<ChangePassword />} />
         <Route path="/admin/:id" element={<AdminDeshBoard />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home/>} />
         <Route path="/signup2" element={<SignUp2 />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/:id" element={<Home />} />
         <Route path="/drop" element={<DropdownMenu />} />
       </Routes>
     </div>

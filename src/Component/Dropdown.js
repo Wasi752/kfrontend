@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import useAuthentication from "../util";
 
 import "./Dropdown.css";
 
@@ -184,6 +185,7 @@ const options2 = [
   { value: "On Srore", label: "On Srore" }
 ];
 function DropdownMenu() {
+  useAuthentication();
     return (
       <div className="App">
         <Dropdown
