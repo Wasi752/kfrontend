@@ -26,54 +26,54 @@ const form = ({ values, errors, touched, handleChange, handleBlur, handleSubmit,
     <div className="w-full h-full flex mt-20 mb-56">
         <div className="w-[30%] h-full"></div>
 
-        <div className="w-[40%] h-full bg-gray-900 mt-36">
-            <p className="mt-5 mb-5 text-3xl text-white font-bold font-serif text-center">Change Your Password</p>
+        <div className="w-[40%] h-full bg-gray-200 mt-36">
+            <p className="mt-10 mb-5 text-3xl text-green-800 font-bold font-serif text-center">Change Your Password</p>
             <div className="flex w-full h-full justify-center divide-x-2 divide-slate-500">
                 <div className="mt-1 flex flex-col w-full h-full">
                     <form onSubmit={handleSubmit}>
-                        <div className={divClassLeft}>
-                            <input
-                                type='name'
-                                name='fullName'
-                                placeholder='Enter Your Full Name'
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.fullName}
-                                className={inputClass}
-                            />
-                            <span className='text-red-500'>
-                                {touched.fullName && errors.fullName}
-                            </span>
+                        {/* <div className={divClassLeft}>
+                        <input
+                            type='name'
+                            name='fullName'
+                            placeholder='Enter Your Full Name'
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.fullName}
+                            className={inputClass}
+                        />
+                        <span className='text-red-500'>
+                            {touched.fullName && errors.fullName}
+                        </span>
 
-                        </div>
-                        <div className={divClassLeft}>
-                            <input
-                                type="text"
-                                name='phoneNumber'
-                                placeholder='Phone Number'
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.phoneNumber}
-                                className={inputClass}
-                            />
-                            <span className='text-red-500'>
-                                {touched.phoneNumber && errors.phoneNumber}
-                            </span>
-                        </div>
-                        <div className={divClassLeft}>
-                            <input
-                                type="text"
-                                name='email'
-                                placeholder='Your Valid Email'
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.email}
-                                className={inputClass}
-                            />
-                            <span className='text-red-500'>
-                                {touched.email && errors.email}
-                            </span>
-                        </div>
+                    </div>
+                    <div className={divClassLeft}>
+                        <input
+                            type="text"
+                            name='phoneNumber'
+                            placeholder='Phone Number'
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.phoneNumber}
+                            className={inputClass}
+                        />
+                        <span className='text-red-500'>
+                            {touched.phoneNumber && errors.phoneNumber}
+                        </span>
+                    </div>
+                    <div className={divClassLeft}>
+                        <input
+                            type="text"
+                            name='email'
+                            placeholder='Your Valid Email'
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.email}
+                            className={inputClass}
+                        />
+                        <span className='text-red-500'>
+                            {touched.email && errors.email}
+                        </span>
+                    </div> */}
                         <div className={divClassLeft}>
                             <input
                                 type="password"
@@ -107,7 +107,7 @@ const form = ({ values, errors, touched, handleChange, handleBlur, handleSubmit,
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="text-center text-2xl text-white font-bold h-[10%] w-[60%] p-4 border border-blue-300 rounded-md mb-5 mt-5 bg-blue-600 hover:text-blue-300">
+                                className="text-center text-2xl text-white font-bold h-[10%] w-[60%] p-4 border border-blue-300 rounded-md mb-16 mt-5 bg-blue-600 hover:text-blue-300">
                                 Submit
                             </button>
                         </div>
@@ -126,7 +126,7 @@ const ChangePassword = () => {
     const navigate = useNavigate();
 
     const onSubmit = (values, { setSubmitting }) => {
-        fetch('http://localhost:3002/user/' + id, {
+        fetch('http://localhost:3002/change/' + id, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
