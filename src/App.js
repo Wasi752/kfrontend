@@ -23,7 +23,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup2" element={<SignUp2 />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/:id" element={<Home />} />
         <Route path="/drop" element={<DropdownMenu />} />
       </Routes>
     </div>

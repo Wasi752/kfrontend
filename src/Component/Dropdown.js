@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import useAuthentication from "../util";
 
 import "./Dropdown.css";
 
@@ -30,6 +31,7 @@ const Dropdown = ({
   const [searchValue, setSearchValue] = useState("");
   const searchRef = useRef();
   const inputRef = useRef();
+  useAuthentication();
 
   useEffect(() => {
     setSearchValue("");
