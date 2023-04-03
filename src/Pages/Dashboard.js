@@ -40,6 +40,11 @@ function AdminDeshBoard() {
         <div className="w-[10%] h-[10%] text-center">
           <p className="text-lg font-bold font-serif text-green-700 mt-3">{id}</p>
           <p className="text-md text-green-700">Super Admin</p>
+          <button
+            type="button"
+            className="border border-rounded"
+            onClick={logOut}
+          >Logout</button>
         </div>
       </div>
       <div className="flex w-full h-full mt-10">
@@ -49,11 +54,6 @@ function AdminDeshBoard() {
             className="border border-rounded"
             onClick={submit}
           >Click Me!</button>
-          <button
-            type="button"
-            className="border border-rounded"
-            onClick={logOut}
-          >Logout</button>
           <p className="text-lg text-red-700 font-bold ml-10 text-left mb-5"><GetCurrentDate /></p>
 
           <p className="text-lg text-green-700 font-bold ml-10 text-left mb-5">Deshboard</p>
