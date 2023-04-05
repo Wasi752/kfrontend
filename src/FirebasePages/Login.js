@@ -18,7 +18,7 @@ function Login() {
                 if (body) {
                     localStorage.setItem('code', body.code)
                     localStorage.setItem('iv', body.iv)
-                    navigate("/admin/" + body.fullName) //+ body.id
+                    navigate("/admin/" + body.iv) //+ body.id
                     //window.alert(`Signed in as ${body.fullName}`)
                 }
                 else {
